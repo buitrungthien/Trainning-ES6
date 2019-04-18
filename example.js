@@ -22,9 +22,13 @@ var result = exercise1_2(123);
 console.log(result);
 
 // Exercise 2
-function exercise2(oriKeyName, newKeyName) {
-
+function exercise2(inputObj, oriKeyName, newKeyName) {
+    inputObj[newKeyName] = inputObj[oriKeyName];
+    delete inputObj[oriKeyName];
 }
+var user = { name: "Thien", age: 24};
+exercise2(user, "name", "userName");
+console.log(user);
 
 //Exercise 3
 function exercise3(inputString) {
@@ -34,9 +38,3 @@ var result = exercise3("hgfedcba");
 console.log(result);
 
 //Exercise 4
-function exercise4(inputArray) {
-    console.log(inputArray);
-    return inputArray.sort().join(" ");
-}
-var result = exercise4([1, 4, 45, 76, 9, 98, 34, 3]);
-console.log(result);
